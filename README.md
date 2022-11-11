@@ -93,7 +93,7 @@ copy all the files manually.
 Once you have the files in your repository, there are a few steps you
 need to follow before you are ready to work with it:
 
-1. Modify `conf.env` with the variables of your project.
+1. Modify `config.env` with the variables of your project.
 2. Create a new python environment with your favourite tool (conda, virtualenv, ...) for the
 formatting toolds of the project.
 3. Install the `requirements.txt` in your formatting environment.

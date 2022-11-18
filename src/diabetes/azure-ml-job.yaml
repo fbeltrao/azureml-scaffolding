@@ -3,7 +3,7 @@
 $schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
 
 # Name of the experiment where all jobs will end up in the Azure ML dashboard
-experiment_name: <experiment-name>
+experiment_name: diabetes
 
 # What to run
 command: >-
@@ -12,7 +12,7 @@ command: >-
 inputs:
   data_path:
     # Only works if dataset created using Azure ML CLI v2; run `az ml data create --help` to see how
-    path: azureml:<azure-ml-dataset-name>:<azure-ml-dataset-version>
+    path: azureml:diabetes-dev-folder:3
   greeting: "Hello"
 
 # What code to make available
@@ -23,4 +23,4 @@ environment:
   build:
     path: ./environment
 
-compute: azureml:<azure-ml-cluster-name>
+compute: azureml:general-cpu-cluster

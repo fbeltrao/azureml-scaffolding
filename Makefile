@@ -49,7 +49,7 @@ job: check-arg-exp check-exp-exists
 		--resource-group $(RESOURCE_GROUP) --workspace-name $(WORKSPACE) $(job-xargs) || true
 
 build-exp: check-arg-exp check-exp-exists
-	docker build --tag $(exp):latest $(build-xargs) $(CODE_PATH)/$(exp)/environment
+	docker build --tag $(exp):latest --build-arg PIP_REQUIREMENTS="$(shell cat $(CODE_PATH)/$(exp)/dev_requirements.txt $(CODE_PATH)/$(exp)/requirements.txt | grep '^[^#-;]')" $(build-xargs) $(CODE_PATH)/$(exp)/environment
 
 # Lines as `<command>: var=val` define defaults for optional arguments.
 local: script="local.py"
